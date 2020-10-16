@@ -23,6 +23,6 @@ jobs:
               run: pip install -r ./requirements.txt
 
             - name: "运行 当当找新书"
-              run: python3 xmly_speed.py
+              run: python3 dd.py
               env:
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
