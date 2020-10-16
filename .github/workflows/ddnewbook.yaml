@@ -1,4 +1,4 @@
-name: 喜马拉雅极速定制版
+name: 当当找新书
 
 on:
     workflow_dispatch:
