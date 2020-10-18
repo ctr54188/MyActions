@@ -21,7 +21,7 @@ import sys
 
 uin=sys.argv[1]
 pwd=sys.argv[2]
-key=os.environ["PUSH_KEY"]
+key=sys.argv[3]
 
 '''
 使用绝对路径时，切换到项目的当前目录。
