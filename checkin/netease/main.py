@@ -288,7 +288,7 @@ def check():
 '''
 def taskPool():
 
-    smzdm_checkin()
+    #smzdm_checkin()
     config = init()
     check() # 每天对api做一次检查
 
