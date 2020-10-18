@@ -116,6 +116,7 @@ class Task(object):
         if self.sckey == '':
             return
         url = 'https://sc.ftqq.com/' + self.sckey + '.send'
+        print(url)
         self.diyText() # 构造发送内容
         response = requests.get(url,params={"text":self.title, "desp":self.content})
         data = json.loads(response.text)
