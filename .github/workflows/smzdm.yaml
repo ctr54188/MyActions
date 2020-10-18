@@ -23,8 +23,7 @@ jobs:
               run: pip install -r ./requirements.txt
 
             - name: "运行 什么值得买签到"
-              run: python3 $GITHUB_WORKSPACE/checkin/SMZDM/smzdm.py ${{ secrets.SMZDM_COOKIES }} ${{ secrets.PUSH_KEY }}
+              run: python3 $GITHUB_WORKSPACE/checkin/SMZDM/smzdm.py
               env:
                   SMZDM_COOKIE: ${{ secrets.SMZDM_COOKIES }}
-                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
-				  
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}		
