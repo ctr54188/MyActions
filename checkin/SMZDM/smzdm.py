@@ -2,8 +2,9 @@ import requests
 import time
 import os
 import sys
-userCookie=sys.argv[1]
-key=sys.argv[2]
+
+userCookie=os.environ["SMZDM_COOKIES"]
+key=os.environ["PUSH_KEY"]
 
 def smzdm_checkin():
     # 设置Server酱post地址 不需要可以删除
