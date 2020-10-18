@@ -50,6 +50,5 @@ jobs:
         fi
         for ((i=0;i<$user_num;i++))
         do
-        python3 $GITHUB_WORKSPACE/checkin/netease/main.py ${user_list[$i]} ${pwd_list[$i]} key
-        EOF
+        python3 $GITHUB_WORKSPACE/checkin/netease/main.py ${user_list[$i]} ${pwd_list[$i]} key <<EOF
         done
