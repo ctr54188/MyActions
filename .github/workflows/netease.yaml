@@ -51,7 +51,8 @@ jobs:
         for ((i=0;i<$user_num;i++))
         do
         ls
-        cd /checkin/netease/
+        cd /checkin
+        ls
         python3 /checkin/netease/main.py ${user_list[$i]} ${pwd_list[$i]} key
         EOF
         done
