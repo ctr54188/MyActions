@@ -314,53 +314,6 @@ def taskPool():
         task = Task(config['uin'], config['pwd'], config['sckey'], config['countrycode'])
         task.start()
 
-'''
-张大妈签到
-'''
-def smzdm_checkin():
-# 设置Server酱post地址 不需要可以删除
-    serverChan = "https://sc.ftqq.com/SCU13452T8a0e14965a37ce4753bff0fc032e9fd65e6b0ddfaab02.send"
-# 状态地址
-    current_url = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
-# 签到地址
-    checkin_url = 'https://zhiyou.smzdm.com/user/checkin/jsonp_checkin'
-# 用用户名和密码登录后获取Cookie
-    userCookie = "__ckguid=AtK4w2Cp3VwqSLytj5WbOa4; __jsluid_s=855164bfabc89cda0e3b2019177aaa89; device_id=2353767656160251676978791434e4540f763ad707b1c5aa20ac09815e; zdm_qd=%7B%22referrer%22%3A%22https%3A%2F%2Fwww.google.com%2F%22%7D; _ga=GA1.2.2025295917.1602516768; __jsluid_h=96f8dc5376b524552f347d4b49056ce7; homepage_sug=l; r_sort_type=score; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%221751d71509b153-06de7fb44577b-333376b-2764800-1751d71509c476%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22%24device_id%22%3A%221751d71509b153-06de7fb44577b-333376b-2764800-1751d71509c476%22%7D; Hm_lvt_9b7ac3d38f30fe89ff0b8a0546904e58=1602609829; footer_floating_layer=0; _gid=GA1.2.908337865.1602609829; _zdmA.vid=*; ad_date=15; ad_json_feed=%7B%7D; sess=MDJkZmR8MTYwNzg3NjA3NXw5NTM0MTkzNzIzfGU0MzAwNjdiMmY1YjQzMWQwZGY3YzQ0MDJiOTcwN2Nm; user=menghen%7C9534193723; smzdm_id=9534193723; userId=menghen|9534193723; smzdm_user_view=836699A4EBE82D854A3E7311CEC01830; smzdm_user_source=47C9A4C8BE78867369B3828DDEDD8D0B; _zdmA.uid=ZDMA.fst28oveo.1602692095.2419200; Hm_lpvt_9b7ac3d38f30fe89ff0b8a0546904e58=1602692095; bannerCounter=%5B%7B%22number%22%3A0%2C%22surplus%22%3A1%7D%2C%7B%22number%22%3A0%2C%22surplus%22%3A1%7D%2C%7B%22number%22%3A2%2C%22surplus%22%3A1%7D%2C%7B%22number%22%3A0%2C%22surplus%22%3A1%7D%2C%7B%22number%22%3A2%2C%22surplus%22%3A1%7D%2C%7B%22number%22%3A0%2C%22surplus%22%3A3%7D%5D; _zdmA.time=1602692095843.0.https%3A%2F%2Fwww.smzdm.com%2F"
-    headers = {
-        'Referer': 'https://www.smzdm.com/',
-        'Host': 'zhiyou.smzdm.com',
-        'Cookie': userCookie,
-        'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
-    }
-
-
-    def req(url):
-        url = url
-        res = requests.get(url, headers=headers)
-        if res.status_code == 200:
-            data = json.loads(res.text)
-            return data
-
-
-    data = req(current_url)
-    if data['checkin']['has_checkin']:
-        info = '%s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (
-        data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'],
-        data['level'], data['checkin']['daily_checkin_num'])
-        print(info)
-    # 通过Server酱发送状态 不需要可以删除
-        requests.post(serverChan, data={'text': data['nickname'] + '已经签到过了', 'desp': info})
-    else:
-        checkin = req(checkin_url)['data']
-        # print(checkin)
-        info = '%s 目前积分：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (
-        data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'],
-        checkin['rank'])
-        print(info)
-        # 通过Server酱发送状态 不需要可以删除
-        requests.post(serverChan, data={'text': data['nickname'] + '签到信息', 'desp': info})
-
 
 '''
 程序的入口
