@@ -364,4 +364,4 @@ def smzdm_checkin():
 if __name__ == '__main__':
     while True:
         Timer(0, taskPool, ()).start()
-        time.sleep(60*60*24) # 间隔一天
+        #time.sleep(60*60*24) # 间隔一天
