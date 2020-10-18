@@ -16,6 +16,17 @@
 ### 使用文档: https://zaincheung.gitee.io/netease-cloud
 
 
+### 二、设置账号密码
+添加名为 **USER**、**PWD** 的变量，值分别为 **账号（仅支持手机号）**、**密码 **
+
+> Settings-->Secrets-->New secret
+
+支持多账号，账号之间与密码之间用 ***#*** 分隔，账号与密码的个数要对应
+
+注:原config 多账号设置\账号\密码 设置失效(其他依然读取config设置) 需要以此设置为准
+
+示例：**USER:13800000000#13800000001**，**PWD:cxkjntm#jntmcxk**
+![image-20200727142753175](https://i.loli.net/2020/07/27/xjri3p4qdchaf2G.png)
 
 目前已实现功能：
 
