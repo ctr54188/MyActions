@@ -4,7 +4,7 @@ import sys
 import os
 from bs4 import BeautifulSoup
 
-userCookie=os.environ["52pojie_COOKIE"]
+userCookie=os.environ["pojie_COOKIE"]
 key=os.environ["PUSH_KEY"]
 
 def pushinfo(info,specific):
