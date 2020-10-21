@@ -25,5 +25,5 @@ jobs:
             - name: "运行 52破解签到"
               run: python3 $GITHUB_WORKSPACE/checkin/52pojie/52pojie.py
               env:
-                  SMZDM_COOKIE: ${{ secrets.52pojie_COOKIES }}
+                  SMZDM_COOKIE: ${{ secrets.pojie_COOKIES }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
