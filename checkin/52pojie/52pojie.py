@@ -22,6 +22,7 @@ def main(*args):
     requests.session().get('https://www.52pojie.cn/home.php?mod=task&do=apply&id=2',headers=headers)
     a=requests.session().get('https://www.52pojie.cn/home.php?mod=task&do=draw&id=2',headers=headers)
     b=BeautifulSoup(a.text,'html.parser')          
+    print(b)
     c=b.find('div',id='messagetext').find('p').text
 
     if "您需要先登录才能继续本操作"  in c: 
