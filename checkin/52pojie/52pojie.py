@@ -3,8 +3,8 @@ import requests
 import sys
 from bs4 import BeautifulSoup
 
-userCookie=sys.argv[1]
-key=sys.argv[2]
+userCookie=os.environ["52pojie_COOKIE"]
+key=os.environ["PUSH_KEY"]
 
 def pushinfo(info,specific):
     headers={   
