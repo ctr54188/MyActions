@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 import requests 
 import sys
+import os
 from bs4 import BeautifulSoup
 
 userCookie=os.environ["52pojie_COOKIE"]
