@@ -1,10 +1,9 @@
 # -*- coding: utf8 -*-
 import requests 
-import sys
 import os
 from bs4 import BeautifulSoup
 
-userCookie=os.environ["pojie_COOKIE"]
+userCookie=os.environ["POJIE_COOKIE"]
 key=os.environ["PUSH_KEY"]
 
 def pushinfo(info,specific):
